@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_catalogs",
+  "info": {
+    "singularName": "product-catalog",
+    "pluralName": "product-catalogs",
+    "displayName": "Product catalog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "description": {
+      "type": "text"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    }
+  }
+}
