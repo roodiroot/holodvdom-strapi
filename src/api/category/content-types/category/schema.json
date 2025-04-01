@@ -22,8 +22,9 @@
     },
     "product_catalog": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product-catalog.product-catalog"
+      "relation": "manyToOne",
+      "target": "api::product-catalog.product-catalog",
+      "inversedBy": "categories"
     },
     "brands": {
       "type": "relation",

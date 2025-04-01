@@ -523,7 +523,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Unique;
     product_catalog: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::product-catalog.product-catalog'
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -879,6 +879,10 @@ export interface ApiProductCatalogProductCatalog
     available: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -22,7 +22,7 @@ export default {
       { key: "wifi_availability", label: "Наличие Wi-Fi" },
       { key: "country_of_manufacturer", label: "Страна производителя" },
       { key: "refrigerant", label: "Хладагент" },
-      { key: "max_pipe_length", label: "Максимальная длина трубопровода" },
+      { key: "max_pipe_length", label: "Максимальная длина трубы" },
       { key: "cooling_capacity", label: "Мощность охлаждения" },
     ];
 

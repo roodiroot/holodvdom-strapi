@@ -1,4 +1,4 @@
-const telegramBotKey = process.env.BOT_TOKEN;
+const telegramBotKey = process.env.BOT_TOKEN || "";
 const chat_id = process.env.GROUP_ID;
 
 export const sendNotification = async (
