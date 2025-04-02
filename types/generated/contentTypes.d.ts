@@ -896,6 +896,7 @@ export interface ApiProductCatalogProductCatalog
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
+    products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
@@ -946,6 +947,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     old_price: Schema.Attribute.BigInteger;
     popularity: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     price: Schema.Attribute.BigInteger;
+    product_catalog: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::product-catalog.product-catalog'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     refrigerant: Schema.Attribute.String;
     sale: Schema.Attribute.BigInteger &

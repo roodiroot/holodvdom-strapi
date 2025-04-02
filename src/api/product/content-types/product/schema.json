@@ -102,6 +102,12 @@
       "type": "boolean",
       "required": true,
       "default": true
+    },
+    "product_catalog": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-catalog.product-catalog",
+      "inversedBy": "products"
     }
   }
 }
