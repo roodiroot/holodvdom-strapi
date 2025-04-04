@@ -923,7 +923,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.DefaultTo<true>;
     brand: Schema.Attribute.Relation<'oneToOne', 'api::brand.brand'>;
     category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    char: Schema.Attribute.Component<'characteristic.characteristic', true>;
     color: Schema.Attribute.String;
+    compressor_brand: Schema.Attribute.String;
     compressor_type: Schema.Attribute.String;
     cooling_capacity: Schema.Attribute.String;
     cooling_power: Schema.Attribute.String;
@@ -933,6 +935,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
     energy_efficiency_class: Schema.Attribute.String;
+    file: Schema.Attribute.Media<'files'>;
     heating_power: Schema.Attribute.String;
     images: Schema.Attribute.Media<'images', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;

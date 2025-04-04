@@ -108,6 +108,21 @@
       "relation": "manyToOne",
       "target": "api::product-catalog.product-catalog",
       "inversedBy": "products"
+    },
+    "compressor_brand": {
+      "type": "string"
+    },
+    "char": {
+      "type": "component",
+      "repeatable": true,
+      "component": "characteristic.characteristic"
+    },
+    "file": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
