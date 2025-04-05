@@ -118,11 +118,16 @@
       "component": "characteristic.characteristic"
     },
     "file": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "hit": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
