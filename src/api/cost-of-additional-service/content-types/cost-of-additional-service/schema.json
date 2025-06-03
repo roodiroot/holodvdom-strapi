@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cost_of_additional_services",
+  "info": {
+    "singularName": "cost-of-additional-service",
+    "pluralName": "cost-of-additional-services",
+    "displayName": "cost of additional services"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "service": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

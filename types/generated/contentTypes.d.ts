@@ -562,6 +562,67 @@ export interface ApiContactsPageContactsPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCostOfAdditionalServiceCostOfAdditionalService
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'cost_of_additional_services';
+  info: {
+    displayName: 'cost of additional services';
+    pluralName: 'cost-of-additional-services';
+    singularName: 'cost-of-additional-service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cost-of-additional-service.cost-of-additional-service'
+    > &
+      Schema.Attribute.Private;
+    price: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    service: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCostOfServiceCostOfService
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'cost_of_services';
+  info: {
+    displayName: 'Cost of services';
+    pluralName: 'cost-of-services';
+    singularName: 'cost-of-service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cost-of-service.cost-of-service'
+    > &
+      Schema.Attribute.Private;
+    model: Schema.Attribute.String & Schema.Attribute.Required;
+    price: Schema.Attribute.BigInteger & Schema.Attribute.DefaultTo<'0'>;
+    publishedAt: Schema.Attribute.DateTime;
+    service: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDeliveryPageDeliveryPage extends Struct.SingleTypeSchema {
   collectionName: 'delivery_pages';
   info: {
@@ -1645,6 +1706,8 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::category.category': ApiCategoryCategory;
       'api::contacts-page.contacts-page': ApiContactsPageContactsPage;
+      'api::cost-of-additional-service.cost-of-additional-service': ApiCostOfAdditionalServiceCostOfAdditionalService;
+      'api::cost-of-service.cost-of-service': ApiCostOfServiceCostOfService;
       'api::delivery-page.delivery-page': ApiDeliveryPageDeliveryPage;
       'api::hero-page.hero-page': ApiHeroPageHeroPage;
       'api::hero-screen.hero-screen': ApiHeroScreenHeroScreen;

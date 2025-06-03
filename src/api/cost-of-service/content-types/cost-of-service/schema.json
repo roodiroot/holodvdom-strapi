@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cost_of_services",
+  "info": {
+    "singularName": "cost-of-service",
+    "pluralName": "cost-of-services",
+    "displayName": "Cost of services"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "service": {
+      "type": "string",
+      "required": true
+    },
+    "model": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "biginteger",
+      "default": "0"
+    }
+  }
+}
