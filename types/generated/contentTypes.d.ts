@@ -1160,6 +1160,36 @@ export interface ApiReviewReview extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiSertifcateSertifcate extends Struct.CollectionTypeSchema {
+  collectionName: 'sertifcates';
+  info: {
+    displayName: 'Sertifcate';
+    pluralName: 'sertifcates';
+    singularName: 'sertifcate';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    img: Schema.Attribute.Media<'images'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sertifcate.sertifcate'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTermsPageTermsPage extends Struct.SingleTypeSchema {
   collectionName: 'terms_pages';
   info: {
@@ -1724,6 +1754,7 @@ declare module '@strapi/strapi' {
       'api::quality-guaratee-page.quality-guaratee-page': ApiQualityGuarateePageQualityGuarateePage;
       'api::return-page.return-page': ApiReturnPageReturnPage;
       'api::review.review': ApiReviewReview;
+      'api::sertifcate.sertifcate': ApiSertifcateSertifcate;
       'api::terms-page.terms-page': ApiTermsPageTermsPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sertifcates",
+  "info": {
+    "singularName": "sertifcate",
+    "pluralName": "sertifcates",
+    "displayName": "Sertifcate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "img": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    }
+  }
+}
